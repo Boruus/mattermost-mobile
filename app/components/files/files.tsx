@@ -26,7 +26,6 @@ type FilesProps = {
     isReplyPost: boolean;
     postId?: string;
     postProps?: Record<string, unknown>;
-    asCard?: boolean;
 }
 
 const MAX_VISIBLE_ROW_IMAGES = 4;
@@ -60,7 +59,6 @@ const Files = ({
     location,
     postId,
     postProps,
-    asCard,
 }: FilesProps) => {
     const galleryIdentifier = `${postId}-fileAttachments-${location}`;
     const [inViewPort, setInViewPort] = useState(false);
@@ -107,7 +105,6 @@ const Files = ({
                     key={file.id}
                 >
                     <File
-                        asCard={asCard}
                         galleryIdentifier={galleryIdentifier}
                         key={file.id}
                         canDownloadFiles={canDownloadFiles}
